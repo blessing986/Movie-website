@@ -37,7 +37,7 @@ function home() {
 
     <div>
 
-      <section className="bg-slate-600 h-96">  
+      <section >  {/* className="bg-slate-600 h-96" */}
 
         <div className="flex justify-between pt-6 mx-4 items-center">
 
@@ -60,26 +60,34 @@ function home() {
 
           <ul className="flex items-center ml-8 w-3/4 mt-4">
 
-            <li className="mr-6 border rounded-full px-4 py-1 text-white text-sm">Series</li>
-            <li className="mr-6 border rounded-full px-4 py-1 text-white text-sm">Films</li>
-            <div className="flex items-center justify-center border rounded-full px-4 py-1 text-white text-sm">
+            <li className="mr-6 border rounded-full px-4 py-1 text-sm">Series</li>
+            <li className="mr-6 border rounded-full px-4 py-1 text-sm">Films</li>
+            <div className="flex items-center justify-center border rounded-full px-4 py-1 text-sm">
               <li>Categories</li>
-              
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-2 cursor-pointer" onClick={() => setIsOpen(true)}>
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
 
-                {isOpen && <Modal setIsOpen={setIsOpen} />}
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-2 cursor-pointer" onClick={() => setIsOpen(true)}>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+
+              {isOpen && <Modal setIsOpen={setIsOpen} />}
 
             </div>
           </ul>
         </div>
 
-        <div className="mt-6 mx-6 rounded overflow-hidden">
+        <div className="mt-6 mx-6 border-solid border-2 border-zinc-700 rounded-lg overflow-hidden relative">
 
-        <img src={bgImg} alt="nothing" />
+          <img src={bgImg} alt="" />
 
-          
+          <div className="absolute bottom-4 left-4">
+
+            <button className="text-white border px-12 py-1 rounded mr-4">Play</button>
+
+            <button className="text-white border px-12 py-1 rounded">My List</button>
+
+          </div>
+
+
         </div>
 
       </section>
@@ -87,6 +95,14 @@ function home() {
       <div className="ml-2 mt-4">
 
         <h1 className="font-bold text-lg">Trending Now</h1>
+
+        <div className="flex overflow-x-auto mt-2">
+
+          <img src={bgImg} alt="" className="w-56 h-60 rounded-lg"/>
+          <img src={bgImg} alt="" className="w-56 h-60 mx-4 rounded-lg"/>
+          <img src={bgImg} alt="" className="w-56 h-60 rounded-lg"/>
+
+        </div>
       </div>
 
     </div>
